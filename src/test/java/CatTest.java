@@ -28,8 +28,8 @@ public class CatTest {
     public void getFoodTest() throws Exception {
         Cat cat = new Cat(feline);
         Mockito.when(feline.eatMeat()).thenReturn(Collections.singletonList("Хищник"));
-        List<String> expectedEatMeat =  cat.getFood();
-        List<String> actualEatMeat = List.of("Хищник");
+        List<String> actualEatMeat =  cat.getFood();
+        List<String> expectedEatMeat= List.of("Хищник");
         assertEquals(expectedEatMeat, actualEatMeat);
     }
 }

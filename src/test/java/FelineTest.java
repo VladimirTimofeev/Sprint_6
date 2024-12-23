@@ -14,9 +14,9 @@ public class FelineTest {
     @Test
     public void eatMeatTest() throws Exception {
         Feline feline = new Feline();
-        List<String> expectedGetFood = feline.eatMeat();
-        List<String> actualGetFood = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(actualGetFood, expectedGetFood);
+        List<String> actualGetFood = feline.eatMeat();
+        List<String> expectedGetFood = List.of("Животные", "Птицы", "Рыба");
+        assertEquals(expectedGetFood, actualGetFood);
     }
 
     @Test
@@ -29,15 +29,15 @@ public class FelineTest {
     @Test
     public void getKittensTest() {
         Feline feline = new Feline();
-        int expectedCount = feline.getKittens();
-        assertEquals(1, expectedCount);
+        int actualCount = feline.getKittens();
+        assertEquals(1, actualCount);
     }
 
     @Test
     public void getKittensIntTest() {
-        int actualCount = 2;
+        int expectedCount = 2;
         Feline feline = new Feline();
-        int expectedCount = feline.getKittens(actualCount);
-        assertEquals(actualCount, expectedCount);
+        int actualCount = feline.getKittens(expectedCount);
+        assertEquals(expectedCount, actualCount);
     }
 }

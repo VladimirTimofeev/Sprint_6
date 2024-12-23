@@ -11,16 +11,16 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class NewLionTest {
+public class LionTest {
 
     @Test
     public void getKittensTest() throws Exception {
-        int actualKitten = 1;
-        Feline feline1 = Mockito.mock(Feline.class);
-        Mockito.when(feline1.getKittens()).thenReturn(actualKitten);
-        Lion lion = new Lion(feline1, "Самка");
-        int expectedKittens = lion.getKittens();
-        assertEquals(actualKitten, expectedKittens);
+        int expectedCount = 1;
+        Feline feline = Mockito.mock(Feline.class);
+        Mockito.when(feline.getKittens()).thenReturn(expectedCount);
+        Lion lion = new Lion(feline, "Самка");
+        int actualKitten = lion.getKittens();
+        assertEquals(expectedCount, actualKitten);
     }
 
     @Test
@@ -28,9 +28,9 @@ public class NewLionTest {
         Feline feline = Mockito.mock(Feline.class);
         Mockito.when(feline.getFood("Хищник")).thenReturn(Collections.singletonList("Хищник"));
         Lion lion = new Lion(feline, "Самец");
-        List<String> expectedFood = lion.getFood();
-        List<String> actualFood = List.of("Хищник");
-        assertEquals(actualFood, expectedFood);
+        List<String> actualFood = lion.getFood();
+        List<String> expectedFood = List.of("Хищник");
+        assertEquals(expectedFood, actualFood);
     }
 
 }

@@ -4,21 +4,22 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionParametersTest {
-    private final String SEX;
-    private final boolean HASMANERESULT;
+    private static String SEX;
+    private final boolean HASMANE_RESULT;
 
     @Mock
-    static Feline feline;
+    static Feline feline = Mockito.mock(Feline.class);
 
 
     public LionParametersTest(Feline feline, String sex, boolean hasManeResult) {
         SEX = sex;
-        HASMANERESULT = hasManeResult;
+        HASMANE_RESULT = hasManeResult;
 
     }
 
@@ -36,6 +37,6 @@ public class LionParametersTest {
     public void doesHaveManeTest() throws Exception {
         Lion lion = new Lion(feline, SEX);
         boolean sexVariable = lion.doesHaveMane();
-        assertEquals(HASMANERESULT, sexVariable);
+        assertEquals(HASMANE_RESULT, sexVariable);
     }
 }
