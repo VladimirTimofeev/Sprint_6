@@ -26,18 +26,18 @@ public class FelineTest {
         assertEquals("Кошачьи", name);
     }
 
-//    @Test
-//    public void getKittensTest() {
-//        Feline feline = new Feline();
-//        int actualCount = feline.getKittens();
-//        assertEquals(1, actualCount);
-//    }
-//
-//    @Test
-//    public void getKittensIntTest() {
-//        int expectedCount = 2;
-//        Feline feline = new Feline();
-//        int actualCount = feline.getKittens(expectedCount);
-//        assertEquals(expectedCount, actualCount);
-//    }
+    @Test
+    public void getKittensTest() {
+        Feline feline = new Feline();
+        int actualCount = feline.getKittens();
+        assertEquals(1, actualCount);
+    }
+
+    @Test
+    public void getKittensIntTest() {
+        int expectedCount = 2;
+        Feline feline = new Feline();
+        int actualCount = feline.getKittens(expectedCount);
+        assertEquals(expectedCount, actualCount);
+    }
 }
