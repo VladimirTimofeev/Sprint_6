@@ -15,18 +15,18 @@ public class LionParametersTest {
     static Feline feline = Mockito.mock(Feline.class);
 
 
-    public LionParametersTest(Feline feline, String sex, boolean hasManeResult) {
+    public LionParametersTest(String sex, boolean hasManeResult) {
         LionParametersTest.sex = sex;
         this.hasManeResult = hasManeResult;
 
     }
 
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] getDataOrder() {
     return new Object[][] {
-            {feline, "Самец", true},
-            {feline, "Самка", false},
+            {"Самец", true},
+            {"Самка", false},
 //            {feline, "Самка", true},
         };
     }
