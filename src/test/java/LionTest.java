@@ -1,6 +1,8 @@
 import com.example.Feline;
 import com.example.Lion;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -37,5 +39,18 @@ public class LionTest {
     public void checkExeption() throws Exception {
         Feline feline = Mockito.mock(Feline.class);
         Lion lion = new Lion(feline, "Неверный пол");
+    }
+
+    @Rule
+    public ExpectedException rule = ExpectedException.none();
+    void someMetod() throws Exception {
+        new Lion(LionParametersTest.feline, "Неверный пол");
+    }
+
+    @Test
+    public void checkTextExeption() throws Exception {
+        rule.expect(Exception.class);
+        rule.expectMessage("Используйте допустимые значения пола животного - самец или самка");
+        someMetod();
     }
 }
