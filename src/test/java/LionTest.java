@@ -33,4 +33,9 @@ public class LionTest {
         assertEquals(expectedFood, actualFood);
     }
 
+    @Test(expected = Exception.class)
+    public void checkExeption() throws Exception {
+        Feline feline = Mockito.mock(Feline.class);
+        Lion lion = new Lion(feline, "Неверный пол");
+    }
 }
